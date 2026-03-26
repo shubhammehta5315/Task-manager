@@ -65,7 +65,6 @@ npm run dev
 ---
 
 ## ⚠️ Notes
-- Do NOT push .env  
 - Allow MongoDB network access (0.0.0.0/0)
 
 ---
