@@ -3,12 +3,14 @@ import { useParams } from "react-router-dom";
 import API from "../api/api";
 import Navbar from "../components/Navbar";
 import TaskItem from "../components/TaskItem";
+import LoadingButton from "../components/LoadingButton"; // ✅ added
 
 export default function Project() {
   const { id } = useParams();
   const [tasks, setTasks] = useState([]);
   const [title, setTitle] = useState("");
   const [loading, setLoading] = useState(false);
+  const [btnLoading, setBtnLoading] = useState(false); // ✅ button loader
   const [error, setError] = useState("");
 
   const fetchTasks = async () => {
@@ -24,12 +26,15 @@ export default function Project() {
   };
 
   const addTask = async () => {
+    setBtnLoading(true); // ✅ start loader
     try {
       await API.post("/tasks", { title, projectId: id });
       setTitle("");
       fetchTasks();
     } catch {
       setError("Failed to add task");
+    } finally {
+      setBtnLoading(false); // ✅ stop loader
     }
   };
 
@@ -61,11 +66,29 @@ export default function Project() {
         {loading && <p>Loading...</p>}
         {error && <p className="error">{error}</p>}
 
-        <input value={title} onChange={(e) => setTitle(e.target.value)} placeholder="New Task" />
-        <button className="primary" onClick={addTask}>Add Task</button>
+        <input
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          placeholder="New Task"
+        />
+
+        {/* ✅ LOADING BUTTON */}
+        <LoadingButton
+          className="primary"
+          loading={btnLoading}
+          onClick={addTask}
+        >
+          Add Task
+        </LoadingButton>
 
         {tasks.map((t) => (
-          <TaskItem key={t._id} task={t} updateStatus={updateStatus} deleteTask={deleteTask} updateTask={updateTask} />
+          <TaskItem
+            key={t._id}
+            task={t}
+            updateStatus={updateStatus}
+            deleteTask={deleteTask}
+            updateTask={updateTask}
+          />
         ))}
       </div>
     </>
