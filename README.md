@@ -1,0 +1,73 @@
+# 🚀 Project & Task Management App
+
+Fullstack app to manage projects & tasks.
+
+---
+
+## 📌 Features
+- 🔐 Authentication (Signup/Login)
+- 📁 Create Projects
+- ✅ Add/Edit/Delete Tasks
+- 🔄 Update Task Status
+- ⏳ Loader & Validation
+- 📱 Responsive UI
+
+---
+
+## 🛠 Tech Stack
+- React (Vite)
+- Node.js + Express
+- MongoDB Atlas
+- JWT
+
+---
+
+## 📥 Setup
+
+### 1. Clone
+git clone https://github.com/your-username/project-task-app.git  
+cd project-task-app  
+
+---
+
+### 2. Create .env (backend/)
+MONGO_URI=your_mongodb_connection_string  
+JWT_SECRET=your_secret  
+
+---
+
+### 3. Install
+npm install  
+cd backend && npm install  
+cd ../frontend && npm install  
+
+---
+
+## ▶️ Run (Development)
+
+Backend:
+cd backend  
+node server.js  
+
+Frontend (new terminal):
+cd frontend  
+npm run dev  
+
+👉 http://localhost:5173  
+
+---
+
+## 🚀 Run (One Command)
+
+npm install  
+npm run dev  
+
+---
+
+## ⚠️ Notes
+- Do NOT push .env  
+- Allow MongoDB network access (0.0.0.0/0)
+
+---
+
+👨‍💻 Shubham Mehta
