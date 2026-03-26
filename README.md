@@ -26,6 +26,7 @@ Fullstack app to manage projects & tasks.
 
 ### 1. Clone
 git clone https://github.com/shubhammehta5315/Task-manager.git
+
 cd project-task-app  
 
 ---
