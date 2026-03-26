@@ -31,8 +31,7 @@ cd project-task-app
 ---
 
 ### 2. Create .env (backend/)
-MONGO_URI=your_mongodb_connection_string  
-JWT_SECRET=your_secret  
+.env file detail detail send on HR email 
 
 ---
 
