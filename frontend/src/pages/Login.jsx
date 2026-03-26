@@ -11,7 +11,7 @@ export default function Login() {
 
   const submit = async () => {
 
-    // ✅ EMAIL VALIDATION
+    // EMAIL VALIDATION
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!form.email || !emailRegex.test(form.email)) {
       setError("Please enter a valid email");
@@ -40,7 +40,7 @@ export default function Login() {
         placeholder="Email"
         onChange={(e) => {
           setForm({ ...form, email: e.target.value });
-          setError(""); // ✅ clear error on typing
+          setError(""); 
         }}
       />
 

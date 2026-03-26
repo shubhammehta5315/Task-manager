@@ -11,7 +11,6 @@ export default function Signup() {
 
   const submit = async () => {
 
-    // ✅ EMAIL VALIDATION
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!form.email || !emailRegex.test(form.email)) {
       setError("Please enter a valid email");
@@ -64,7 +63,7 @@ export default function Signup() {
         Signup
       </LoadingButton>
 
-      {/* ✅ SIGN IN LINK */}
+      {/* SIGN IN LINK */}
       <p>
         Already have an account?{" "}
         <Link to="/">Sign In</Link>

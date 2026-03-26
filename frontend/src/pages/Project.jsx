@@ -3,14 +3,14 @@ import { useParams } from "react-router-dom";
 import API from "../api/api";
 import Navbar from "../components/Navbar";
 import TaskItem from "../components/TaskItem";
-import LoadingButton from "../components/LoadingButton"; // ✅ added
+import LoadingButton from "../components/LoadingButton"; 
 
 export default function Project() {
   const { id } = useParams();
   const [tasks, setTasks] = useState([]);
   const [title, setTitle] = useState("");
   const [loading, setLoading] = useState(false);
-  const [btnLoading, setBtnLoading] = useState(false); // ✅ button loader
+  const [btnLoading, setBtnLoading] = useState(false);
   const [error, setError] = useState("");
 
   const fetchTasks = async () => {
@@ -26,7 +26,7 @@ export default function Project() {
   };
 
   const addTask = async () => {
-    setBtnLoading(true); // ✅ start loader
+    setBtnLoading(true); 
     try {
       await API.post("/tasks", { title, projectId: id });
       setTitle("");
@@ -34,7 +34,7 @@ export default function Project() {
     } catch {
       setError("Failed to add task");
     } finally {
-      setBtnLoading(false); // ✅ stop loader
+      setBtnLoading(false);
     }
   };
 

@@ -2,13 +2,13 @@ import { useEffect, useState } from "react";
 import API from "../api/api";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
-import LoadingButton from "../components/LoadingButton"; // ✅ added
+import LoadingButton from "../components/LoadingButton"; 
 
 export default function Dashboard() {
   const [projects, setProjects] = useState([]);
   const [title, setTitle] = useState("");
   const [loading, setLoading] = useState(false);
-  const [btnLoading, setBtnLoading] = useState(false); // ✅ button loader
+  const [btnLoading, setBtnLoading] = useState(false);
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
@@ -25,7 +25,7 @@ export default function Dashboard() {
   };
 
   const createProject = async () => {
-    setBtnLoading(true); // ✅ start loader
+    setBtnLoading(true);
     try {
       await API.post("/projects", { title });
       setTitle("");
@@ -33,7 +33,7 @@ export default function Dashboard() {
     } catch {
       setError("Failed to create project");
     } finally {
-      setBtnLoading(false); // ✅ stop loader
+      setBtnLoading(false);
     }
   };
 
